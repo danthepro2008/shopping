@@ -1,0 +1,608 @@
+<html>
+	<head>
+		<title>Website</title>
+		
+		<style>
+			.little-surprises {
+				display: flex;
+			}
+			
+			.image {
+				flex: 1;
+				margin: 55px;
+			}
+			
+			.images {
+				width: 300px;
+				height: 300px;
+				border: 5px solid lime;
+			}
+			
+			body {
+				margin: 0;
+				background-color: yellow;
+			}
+			
+			.tabs {
+				background-color: grey;
+			}
+			
+			#list_kinder {
+				display: inline;
+				margin-right: 200px;
+				font-size: 50px;
+				color: blue;
+			}
+			
+			#list_garments {
+				display: inline;
+				margin-right: 200px;
+				font-size: 50px;
+				color: blue;
+			}
+			
+			#pages {
+				display: flex;
+				margin: 0;
+			}
+			
+			#kinder_page {
+				flex: 2;
+				text-align: center;
+				visibility: visible;
+			}
+			
+			#garments_page {
+				flex: 2;
+				text-align: center;
+				visibility: hidden;
+				position: absolute;
+			}
+			
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			#title_kinder {
+				text-align: center;
+				font-size: 50px;
+			}
+			
+			#title_garments {
+				text-align: center;
+				font-size: 50px;
+			}
+			
+			.add_to_cart {
+				color: red;
+				display: inline;
+				font-size: 50px;
+				border-bottom: 2px solid red;
+			}
+			
+			#cart_text {
+				text-align: right;
+				font-size: 50px;
+				color: red;
+				display: inline;
+				border-bottom: 2px solid red;
+				position: absolute;
+				left: 90%;
+			}
+			
+			.name_image {
+				text-align: center;
+				font-size: 45px;
+			}
+			
+			#cart_text_1 {
+				position: absolute;
+				left: 91%;
+				top: 20%;
+			}
+			
+			#cart_text_2 {
+				position: absolute;
+				left: 91%;
+				top: 25%;
+			}
+			
+			#cart_text_3 {
+				position: absolute;
+				left: 91%;
+				top: 30%;
+			}
+			
+			#cart_text_4 {
+				position: absolute;
+				left: 91%;
+				top: 35%;
+			}
+			
+			#cart_text_5 {
+				position: absolute;
+				left: 91%;
+				top: 40%;
+			}
+			
+			#cart_text_6 {
+				position: absolute;
+				left: 91%;
+				top: 45%;
+			}
+			
+			#cart_text_7 {
+				position: absolute;
+				left: 91%;
+				top: 50%;
+			}
+			
+			#cart_text_8 {
+				position: absolute;
+				left: 91%;
+				top: 55%;
+			}
+			
+			#cart_text_9 {
+				position: absolute;
+				left: 91%;
+				top: 60%;
+			}
+			
+			#cart_text_10 {
+				position: absolute;
+				left: 91%;
+				top: 65%;
+			}
+			
+			#cart_text_11 {
+				position: absolute;
+				left: 91%;
+				top: 70%;
+			}
+			
+			#cart_text_12 {
+				position: absolute;
+				left: 91%;
+				top: 75%;
+			}
+			
+			#cart_text_13 {
+				position: absolute;
+				left: 91%;
+				top: 80%;
+				
+				}
+				
+			#remove_all_text {
+					text-align: right;
+					font-size: 50px;
+					color: red;
+					display: inline;
+					border-bottom: 2px solid red;
+					position: absolute;
+					left: 70%;
+				}
+				
+			#confirm_cart_text {
+					text-align: right;
+					font-size: 50px;
+					color: red;
+					display: inline;
+					border-bottom: 2px solid red;
+					position: absolute;
+					left: 70%;
+					top: 30%;
+				}
+				
+			#confirm_page {
+				visibility: hidden;
+				text-align: center;
+			}
+				
+			.confirm_button {
+				background-color: gray;
+				color: white;
+				border: 2px solid black;
+				margin: 20px;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="site">
+			<ul class="tabs">
+					<a href="#list_kinder">
+						<li id="list_kinder" onclick="teleport_to_kinder_page()">Little surprises</li>
+					</a>
+						
+					<a href="#list_garments">
+						<li id="list_garments" onclick="teleport_to_garments_page()">Garments</li>
+					</a>
+			</ul>
+			
+			<div id="cart">
+						<ul>
+							<li id="cart_text">Cart</li>
+						</ul>
+						
+						<h1 id="cart_text_1" title="Click here to remove" onclick="remove_one()"></h1>
+						<h1 id="cart_text_2" title="Click here to remove" onclick="remove_two()"></h1>
+						<h1 id="cart_text_3" title="Click here to remove" onclick="remove_three()"></h1>
+						<h1 id="cart_text_4" title="Click here to remove" onclick="remove_four()"></h1>
+						<h1 id="cart_text_5" title="Click here to remove" onclick="remove_five()"></h1>
+						<h1 id="cart_text_6" title="Click here to remove" onclick="remove_six()"></h1>
+						<h1 id="cart_text_7" title="Click here to remove" onclick="remove_seven()"></h1>
+						<h1 id="cart_text_8" title="Click here to remove" onclick="remove_eat()"></h1>
+						<h1 id="cart_text_9" title="Click here to remove" onclick="remove_nine()"></h1>
+						<h1 id="cart_text_10" title="Click here to remove" onclick="remove_ten()"></h1>
+						<h1 id="cart_text_11" title="Click here to remove" onclick="remove_eleven()"></h1>
+						<h1 id="cart_text_12" title="Click here to remove" onclick="remove_twelve()"></h1>
+						<h1 id="cart_text_13" title="Click here to remove" onclick="remove_thirteen()"></h1>
+				</div>
+				
+				<div id="remove_all_cart">
+					<ul>
+						<li id="remove_all_text" onclick="remove_all()">Remove all</li>
+					</ul>
+				</div>
+				
+				<div id="confirm_cart">
+					<ul>
+						<li id="confirm_cart_text" onclick="confirm_all()">Confirm all</li>
+					</ul>
+				</div>
+				
+				<div id="confirm_page">
+					<h1>
+						<p>Are you sure you want to confirm the purchase?</p>
+					</h1>
+					
+					<button class="confirm_button">Yes</button>
+					<button class="confirm_button" onclick="back_to_pages()">No and back</button>
+				</div>
+			
+				<div id="pages">
+						<div id="kinder_page">
+							<h1 id="title_kinder">Little surprises</h1>
+								<div class="little-surprises">
+									<div class="image">
+										<h1 class="name_image">Dino</h1>
+										<img class="images" src="dino.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_dino()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Bear</h1>
+										<img class="images" src="bear.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_bear()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Bear2</h1>
+										<img class="images" src="dovn.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_dovn()">Add to cart</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="little-surprises">
+									<div class="image">
+										<h1 class="name_image">Elephant</h1>
+										<img class="images" src="elephant.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_elephant()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Leon</h1>
+										<img class="images" src="leon.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_leon()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Fox</h1>
+										<img class="images" src="fox.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_fox()">Add to cart</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="little-surprises">
+									<div class="image">
+										<h1 class="name_image">Jiraf</h1>
+										<img class="images" src="jiraf.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_jiraf()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Monkey</h1>
+										<img class="images" src="monkey.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_monkey()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Rino</h1>
+										<img class="images" src="rino.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_rino()">Add to cart</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="little-surprises">
+									<div class="image">
+										<h1 class="name_image">Spinfish</h1>
+										<img class="images" src="spinfish.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_spinfish()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Scetbord</h1>
+										<img class="images" src="scetbord.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_scetbord()">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<h1 class="name_image">Flower</h1>
+										<img class="images" src="flower.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_flower()">Add to cart</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="little-surprises">
+									<div class="image">
+										<h1 class="name_image">Car</h1>
+										<img class="images" src="car.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart" onclick="buy_car()">Add to cart</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div id="garments_page">
+								<h1 id="title_garments">Garments</h1>
+								<div class="little-surprises">
+									<div class="image">
+										<img class="images" src="boots1.jpeg">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<img class="images" src="boots2.jpeg">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart">Add to cart</li>
+										</ul>
+									</div>
+									
+									<div class="image">
+										<img class="images" src="rino.png">
+										<ul>
+											<li class="add_to_cart" title="Click here to add to the cart">Add to cart</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				<script>
+					var kinder = 0;
+					var garments = 0;
+					
+					function teleport_to_kinder_page() {
+						document.getElementById("garments_page").style.visibility = "hidden";
+						document.getElementById("kinder_page").style.visibility = "visible";
+						document.getElementById("garments_page").style.position = "absolute";
+						document.getElementById("garments_page").style.top = "100%";
+						document.getElementById("kinder_page").style.position = "absolute";
+						document.getElementById("kinder_page").style.top = "12%";
+						document.getElementById("kinder_page").style.left = "3%";
+						
+						kinder = 1;
+						garments = 0;
+						
+						if(kinder == 1) {
+							document.getElementById("list_kinder").style.color = "lime";
+						}
+						
+						if(garments == 0) {
+							document.getElementById("list_garments").style.color = "blue";
+						}
+					}
+					
+					function teleport_to_garments_page() {
+						document.getElementById("kinder_page").style.visibility = "hidden";
+						document.getElementById("garments_page").style.visibility = "visible";
+						document.getElementById("kinder_page").style.position = "absolute";
+						document.getElementById("kinder_page").style.top = "100%";
+						document.getElementById("garments_page").style.position = "absolute";
+						document.getElementById("garments_page").style.top = "12%";
+						document.getElementById("garments_page").style.left = "3%";
+						
+						garments = 1;
+						kinder = 0;
+						
+						if(garments == 1) {
+							document.getElementById("list_garments").style.color = "lime";
+						}
+						
+						if(kinder == 0) {
+							document.getElementById("list_kinder").style.color = "blue";
+						}
+					}
+					
+					function buy_dino() {
+						document.getElementById("cart_text_1").style.visibility = "visible";
+						document.getElementById("cart_text_1").innerHTML = "dino";
+					}
+					
+					function buy_bear() {
+						document.getElementById("cart_text_2").style.visibility = "visible";
+						document.getElementById("cart_text_2").innerHTML = "bear";
+					}
+					
+					function buy_dovn() {
+						document.getElementById("cart_text_3").style.visibility = "visible";
+						document.getElementById("cart_text_3").innerHTML = "bear2";
+					}
+					
+					function buy_elephant() {
+						document.getElementById("cart_text_4").style.visibility = "visible";
+						document.getElementById("cart_text_4").innerHTML = "elephant";
+					}
+					
+					function buy_leon() {
+						document.getElementById("cart_text_5").style.visibility = "visible";
+						document.getElementById("cart_text_5").innerHTML = "leon";
+					}
+					
+					function buy_fox() {
+						document.getElementById("cart_text_6").style.visibility = "visible";
+						document.getElementById("cart_text_6").innerHTML = "fox";
+					}
+					
+					function buy_jiraf() {
+						document.getElementById("cart_text_7").style.visibility = "visible";
+						document.getElementById("cart_text_7").innerHTML = "jiraf";
+					}
+					
+					function buy_monkey() {
+						document.getElementById("cart_text_8").style.visibility = "visible";
+						document.getElementById("cart_text_8").innerHTML = "monkey";
+					}
+					
+					function buy_rino() {
+						document.getElementById("cart_text_9").style.visibility = "visible";
+						document.getElementById("cart_text_9").innerHTML = "rino";
+					}
+					
+					function buy_spinfish() {
+						document.getElementById("cart_text_10").style.visibility = "visible";
+						document.getElementById("cart_text_10").innerHTML = "spinfish";
+					}
+					
+					function buy_scetbord() {
+						document.getElementById("cart_text_11").style.visibility = "visible";
+						document.getElementById("cart_text_11").innerHTML = "scetbord";
+					}
+					
+					function buy_flower() {
+						document.getElementById("cart_text_12").style.visibility = "visible";
+						document.getElementById("cart_text_12").innerHTML = "flower";
+					}
+					
+					function buy_car() {
+						document.getElementById("cart_text_13").style.visibility = "visible";
+						document.getElementById("cart_text_13").innerHTML = "car";
+					}
+					
+					function remove_one() {
+						document.getElementById("cart_text_1").style.visibility = "hidden";
+					}
+					
+					function remove_two() {
+						document.getElementById("cart_text_2").style.visibility = "hidden";
+					}
+					
+					function remove_three() {
+						document.getElementById("cart_text_3").style.visibility = "hidden";
+					}
+					
+					function remove_four() {
+						document.getElementById("cart_text_4").style.visibility = "hidden";
+					}
+					
+					function remove_five() {
+						document.getElementById("cart_text_5").style.visibility = "hidden";
+					}
+					
+					function remove_six() {
+						document.getElementById("cart_text_6").style.visibility = "hidden";
+					}
+					
+					function remove_seven() {
+						document.getElementById("cart_text_7").style.visibility = "hidden";
+					}
+					
+					function remove_eat() {
+						document.getElementById("cart_text_8").style.visibility = "hidden";
+					}
+					
+					function remove_nine() {
+						document.getElementById("cart_text_9").style.visibility = "hidden";
+					}
+					
+					function remove_ten() {
+						document.getElementById("cart_text_10").style.visibility = "hidden";
+					}
+					
+					function remove_eleven() {
+						document.getElementById("cart_text_11").style.visibility = "hidden";
+					}
+					
+					function remove_twelve() {
+						document.getElementById("cart_text_12").style.visibility = "hidden";
+					}
+					
+					function remove_thirteen() {
+						document.getElementById("cart_text_13").style.visibility = "hidden";
+					}
+					
+					function remove_all() {
+						document.getElementById("cart_text_1").style.visibility = "hidden";
+						document.getElementById("cart_text_2").style.visibility = "hidden";
+						document.getElementById("cart_text_3").style.visibility = "hidden";
+						document.getElementById("cart_text_4").style.visibility = "hidden";
+						document.getElementById("cart_text_5").style.visibility = "hidden";
+						document.getElementById("cart_text_6").style.visibility = "hidden";
+						document.getElementById("cart_text_7").style.visibility = "hidden";
+						document.getElementById("cart_text_8").style.visibility = "hidden";
+						document.getElementById("cart_text_9").style.visibility = "hidden";
+						document.getElementById("cart_text_10").style.visibility = "hidden";
+						document.getElementById("cart_text_11").style.visibility = "hidden";
+						document.getElementById("cart_text_12").style.visibility = "hidden";
+						document.getElementById("cart_text_13").style.visibility = "hidden";
+					}
+					
+					function confirm_all() {
+						document.getElementById("site").style.visibility = "hidden";
+						document.getElementById("kinder_page").style.visibility = "hidden";
+						document.getElementById("garments_page").style.visibility = "hidden";
+						
+						document.getElementById("confirm_page").style.visibility = "visible";
+					}
+					
+					function back_to_pages() {
+						document.getElementById("site").style.visibility = "visible";
+						document.getElementById("kinder_page").style.visibility = "visible";
+						document.getElementById("garments_page").style.visibility = "visible";
+						
+						document.getElementById("confirm_page").style.visibility = "hidden";
+					}
+			</script>
+	</body>
+</html>
